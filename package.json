@@ -4,25 +4,20 @@
   "description": "",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "pnpm clean && pnpm build-frontend && run-script-os",
-    "build:macos": "./venv/bin/python build-macos.py py2app",
-    "build:windows": ".\\venv\\Scripts\\pyinstaller build-windows.spec",
-    "build:linux": "./venv/bin/pyinstaller build-linux.spec",
-    "build-frontend": "cd frontend && pnpm build",
-    "clean": "run-script-os",
-    "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
-    "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
+    "initialize": "pnpm install && pnpm initialize-frontend && run-script-os",
+    "initialize:windows": "python -m venv .venv && .\\.venv\\Scripts\\pip install -r requirements.txt",
+    "initialize:macos": "python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt",
+    "initialize-frontend": "cd frontend && pnpm install",
     "dev": "cd frontend && pnpm dev",
-    "init": "pnpm install && pnpm init-frontend && pnpm init-backend",
-    "init-frontend": "cd frontend && pnpm install",
-    "init-backend": "python -m venv venv && .\\venv\\Scripts\\pip install -r requirements.txt || ./venv/bin/pip install -r requirements.txt",
     "start": "pnpm build-frontend && run-script-os",
-    "start:windows": ".\\venv\\Scripts\\python backend\\index.py",
-    "start:default": "./venv/bin/python backend/index.py"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
+    "start:windows": ".\\.venv\\Scripts\\python backend\\index.py",
+    "start:default": "./.venv/bin/python backend/index.py",
+    "clean": "rimraf dist build gui",
+    "build": "pnpm clean && pnpm build-frontend && run-script-os",
+    "build:macos": "./.venv/bin/python build-macos.py py2app",
+    "build:windows": ".\\.venv\\Scripts\\pyinstaller build-windows.spec",
+    "build:linux": "./.venv/bin/pyinstaller build-linux.spec",
+    "build-frontend": "cd frontend && pnpm build"
   },
   "keywords": [
     "pywebview",
@@ -33,8 +28,8 @@
     "vite"
   ],
   "author": "Jose L",
-  "license": "BSD-3-Clause",
   "devDependencies": {
-    "run-script-os": "1.1.6"
+    "run-script-os": "1.1.6",
+    "rimraf": "6.0.1"
   }
 }

@@ -1,4 +1,13 @@
+# Python - Virtual Environment
+env
 venv
+.env
+.venv
+
+# Python - Bytecode Cache
+__pycache__
+*.py[cod]
+
 gui
 build
 dist
