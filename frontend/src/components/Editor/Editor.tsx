@@ -37,6 +37,12 @@ export function Editor() {
       >
         Save
       </button>
+      <button
+        className="button"
+        onClick={() => window.pywebview.api.toggle_fullscreen()}
+      >
+        Toggle Full Screen
+      </button>
     </div>
   );
 }
