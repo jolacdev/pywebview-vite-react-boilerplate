@@ -1,44 +1,8 @@
-import os
 import threading
 from time import time
-
-import numpy as np
 import webview
-
-
-class Api:
-    def rand_arr(self):
-        return np.random.rand(10).tolist()
-
-    def fullscreen(self):
-        webview.windows[0].toggle_fullscreen()
-
-    def save_content(self, content):
-        filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
-        if not filename:
-            return
-
-        with open(filename, "w") as f:
-            f.write(content)
-
-    def ls(self):
-        return os.listdir(".")
-
-
-def get_entrypoint():
-    def exists(path):
-        return os.path.exists(os.path.join(os.path.dirname(__file__), path))
-
-    if exists("../gui/index.html"):  # unfrozen development
-        return "../gui/index.html"
-
-    if exists("../Resources/gui/index.html"):  # frozen py2app
-        return "../Resources/gui/index.html"
-
-    if exists("./gui/index.html"):
-        return "./gui/index.html"
-
-    raise Exception("No index.html found")
+from api import Api
+from entrypoint import get_frontend_entrypoint
 
 
 def set_interval(interval):
@@ -60,7 +24,7 @@ def set_interval(interval):
     return decorator
 
 
-entry = get_entrypoint()
+frontend_entrypoint = get_frontend_entrypoint()
 
 
 @set_interval(1)
@@ -72,5 +36,5 @@ def update_ticker():
 
 
 if __name__ == "__main__":
-    window = webview.create_window("pywebview-react boilerplate", entry, js_api=Api())
+    window = webview.create_window("pywebview-react boilerplate", frontend_entrypoint, js_api=Api())
     webview.start(update_ticker, debug=True)
