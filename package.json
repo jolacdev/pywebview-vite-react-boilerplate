@@ -4,20 +4,22 @@
   "description": "",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "initialize": "pnpm install && pnpm initialize-frontend && run-script-os",
+    "initialize": "pnpm install && pnpm _initialize-frontend && run-script-os",
     "initialize:windows": "python -m venv .venv && .\\.venv\\Scripts\\pip install -r requirements.txt",
     "initialize:macos": "python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt",
-    "initialize-frontend": "cd frontend && pnpm install",
-    "dev": "cd frontend && pnpm dev",
-    "start": "pnpm build-frontend && run-script-os",
-    "start:windows": ".\\.venv\\Scripts\\python backend\\index.py",
-    "start:default": "./.venv/bin/python backend/index.py",
-    "clean": "rimraf dist build gui",
-    "build": "pnpm clean && pnpm build-frontend && run-script-os",
+    "_initialize-frontend": "cd frontend && pnpm install",
+    "dev:frontend": "cd frontend && pnpm dev",
+    "dev:backend": "cross-env LIVE_SERVER=1 pnpm _run-python",
+    "start": "pnpm _build-frontend && pnpm _run-python",
+    "_run-python": "run-script-os",
+    "_run-python:windows": ".\\.venv\\Scripts\\python backend\\index.py",
+    "_run-python:default": "./.venv/bin/python backend/index.py",
+    "build": "pnpm _clean:build && pnpm _build-frontend && run-script-os",
     "build:macos": "./.venv/bin/python build-macos.py py2app",
     "build:windows": ".\\.venv\\Scripts\\pyinstaller build-windows.spec",
     "build:linux": "./.venv/bin/pyinstaller build-linux.spec",
-    "build-frontend": "cd frontend && pnpm build"
+    "_build-frontend": "cd frontend && pnpm build",
+    "_clean:build": "rimraf dist build frontend_dist"
   },
   "keywords": [
     "pywebview",
@@ -29,6 +31,7 @@
   ],
   "author": "Jose L",
   "devDependencies": {
+    "cross-env": "10.1.0",
     "run-script-os": "1.1.6",
     "rimraf": "6.0.1"
   }

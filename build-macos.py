@@ -18,7 +18,7 @@ if os.path.exists("dist/index.app"):
 
 ENTRY_POINT = ["backend/index.py"]
 
-DATA_FILES = tree("gui")
+DATA_FILES = tree("frontend_dist")
 OPTIONS = {
     "argv_emulation": False,
     "strip": False,

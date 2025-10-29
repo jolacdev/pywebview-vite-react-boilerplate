@@ -24,9 +24,6 @@ def set_interval(interval):
     return decorator
 
 
-frontend_entrypoint = get_frontend_entrypoint()
-
-
 @set_interval(1)
 def update_ticker():
     if len(webview.windows) > 0:
@@ -36,5 +33,6 @@ def update_ticker():
 
 
 if __name__ == "__main__":
+    frontend_entrypoint = get_frontend_entrypoint()
     window = webview.create_window("pywebview-react boilerplate", frontend_entrypoint, js_api=Api())
     webview.start(update_ticker, debug=True)
