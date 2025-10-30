@@ -1,12 +1,10 @@
-import { Editor, Ticker } from "./components";
+import { Editor, Ticker } from './components';
 
-const App = () => {
-  return (
-    <>
-      <Ticker />
-      <Editor />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Ticker />
+    <Editor />
+  </>
+);
 
 export default App;

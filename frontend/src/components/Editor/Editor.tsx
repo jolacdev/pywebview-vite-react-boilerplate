@@ -1,9 +1,10 @@
-import { useState } from "react";
-import "./Editor.css";
+import { useState } from 'react';
 
-export function Editor() {
+import './Editor.css';
+
+export const Editor = () => {
   const [content, saveContent] = useState(
-    "Using Python as backend, you can perform operations that are not allowed in Javascript, for example disk access. Click button below to save this content to hard drive."
+    'Using Python as backend, you can perform operations that are not allowed in Javascript, for example disk access. Click button below to save this content to hard drive.',
   );
 
   return (
@@ -22,7 +23,7 @@ export function Editor() {
         onClick={() => {
           // @ts-expect-error: We are using a custom API
           window.pywebview.api.rand_arr().then((arr: number[]) => {
-            const randArrSttr = arr.join(", ");
+            const randArrSttr = arr.join(', ');
             saveContent(randArrSttr);
           });
         }}
@@ -45,4 +46,4 @@ export function Editor() {
       </button>
     </div>
   );
-}
+};

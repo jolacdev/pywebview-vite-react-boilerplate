@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import "./Ticker.css";
+import { useEffect, useState } from 'react';
 
-export function Ticker() {
-  const [ticker, setTicker] = useState("");
+import './Ticker.css';
+
+export const Ticker = () => {
+  const [ticker, setTicker] = useState('');
 
   useEffect(() => {
     const handlePywebviewReady = () => {
@@ -17,11 +18,11 @@ export function Ticker() {
     if (window.pywebview) {
       handlePywebviewReady();
     } else {
-      window.addEventListener("pywebviewready", handlePywebviewReady);
+      window.addEventListener('pywebviewready', handlePywebviewReady);
     }
 
     return () => {
-      window.removeEventListener("pywebviewready", handlePywebviewReady);
+      window.removeEventListener('pywebviewready', handlePywebviewReady);
     };
   }, []);
 
@@ -36,4 +37,4 @@ export function Ticker() {
       <strong>{ticker}</strong>
     </div>
   );
-}
+};

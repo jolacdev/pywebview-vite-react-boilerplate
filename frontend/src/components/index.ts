@@ -1,2 +1,2 @@
-export * from "./Editor/Editor";
-export * from "./Ticker/Ticker";
+export * from './Editor/Editor';
+export * from './Ticker/Ticker';
