@@ -26,6 +26,6 @@
     "eslint.constants.ts",
     ".prettierrc.mjs",
     "vite.config.ts",
-    "vitest.config.ts"
+    "setupTests.ts"
   ]
 }

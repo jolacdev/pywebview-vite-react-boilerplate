@@ -1,7 +1,12 @@
+/// <reference types="vitest/config" />
 import react from '@vitejs/plugin-react-swc';
-import { defineConfig } from 'vite';
+import { defineConfig, InlineConfig, UserConfig } from 'vite';
 
-// https://vitejs.dev/config/
+// Extends Vite’s UserConfig type to include Vitest-specific options (`test` field).
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig;
+}
+
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -13,4 +18,9 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-});
+  test: {
+    environment: 'jsdom', // Sets the test environment to `jsdom` to simulate a browser.
+    globals: true, // Enables global test APIs like `describe`, `it`, etc.
+    setupFiles: './setupTests.ts', // Specifies a setup file to run before tests.
+  },
+} as VitestConfigExport);
