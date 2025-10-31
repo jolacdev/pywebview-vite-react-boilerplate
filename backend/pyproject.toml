@@ -1,0 +1,29 @@
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # PyCodeStyle Errors
+    "W",   # PyCodeStyle Warnings
+    "F",   # PyFlakes
+    "UP",  # PyUpgrade
+    "B",   # Flake8-Bugbear
+    "SIM", # Flake8-Simplify
+    "I",   # ISort
+    "N",   # PEP8 Naming
+    "PL",  # PyLint Convention
+
+    # Preview Rules
+    "E262", # no-space-after-inline-comment
+    "E271", # multiple-spaces-after-keyword
+    "E272", # multiple-spaces-before-keyword
+    "E275", # missing-whitespace-after-keyword
+    "E301", # blank-line-between-methods
+    "E302", # blank-lines-top-level
+    "E303", # too-many-blank-lines
+    "E304", # blank-line-after-decorator
+    "E305", # blank-lines-after-function-or-class"
+    "W391", # too-many-newlines-at-end-of-file
+]
+preview = true
+explicit-preview-rules = true
