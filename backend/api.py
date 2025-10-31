@@ -1,8 +1,9 @@
-import webview
 import numpy as np
+import webview
+
 
 class Api:
-    """Pythion API functions exposed to JavaScript."""
+    """Python API functions exposed to JavaScript."""
 
     # Data generation
     def rand_arr(self):

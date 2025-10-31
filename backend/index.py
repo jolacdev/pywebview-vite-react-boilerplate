@@ -1,6 +1,8 @@
 import threading
 from time import time
+
 import webview
+
 from api import Api
 from entrypoint import get_frontend_entrypoint
 
@@ -27,9 +29,7 @@ def set_interval(interval):
 @set_interval(1)
 def update_ticker():
     if len(webview.windows) > 0:
-        webview.windows[0].evaluate_js(
-            'window.pywebview.state.setTicker("%d")' % time()
-        )
+        webview.windows[0].evaluate_js(f'window.pywebview.state.setTicker("{int(time())}")')
 
 
 if __name__ == "__main__":
