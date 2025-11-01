@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import './Ticker.css';
-
 export const Ticker = () => {
   const [ticker, setTicker] = useState('');
 
@@ -23,9 +21,11 @@ export const Ticker = () => {
   }, []);
 
   return (
-    <div className="ticker-container">
-      <h1>PyWebView</h1>
-      <em>
+    <div className="flex flex-col items-center my-8">
+      <h1 className="mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">
+        PyWebView
+      </h1>
+      <em className="text-base">
         Python ↔ JavaScript communication bridge. Python value:
         <strong>{ticker}</strong>
       </em>
