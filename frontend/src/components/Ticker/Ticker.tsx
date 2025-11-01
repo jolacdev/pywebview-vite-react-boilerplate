@@ -7,11 +7,7 @@ export const Ticker = () => {
 
   useEffect(() => {
     const handlePywebviewReady = () => {
-      if (!window.pywebview.state) {
-        window.pywebview.state = {};
-      }
-
-      // @ts-expect-error This is a custom state
+      window.pywebview.state ||= {};
       window.pywebview.state.setTicker = setTicker;
     };
 
@@ -28,13 +24,11 @@ export const Ticker = () => {
 
   return (
     <div className="ticker-container">
-      <h1>Welcome to pywebview!</h1>
-
+      <h1>PyWebView</h1>
       <em>
-        You can communicate between Python and JavaScript. This value comes from
-        Python:
+        Python ↔ JavaScript communication bridge. Python value:
+        <strong>{ticker}</strong>
       </em>
-      <strong>{ticker}</strong>
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import { Editor, Ticker } from './components';
+import { Editor } from './components/Editor/Editor';
+import { Ticker } from './components/Ticker/Ticker';
 
 const App = () => (
   <>

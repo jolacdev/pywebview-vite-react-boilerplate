@@ -21,8 +21,7 @@ export const Editor = () => {
       <button
         className="button"
         onClick={() => {
-          // @ts-expect-error: We are using a custom API
-          window.pywebview.api.rand_arr().then((arr: number[]) => {
+          window.pywebview.api.generate_random_number_array(2).then((arr) => {
             const randArrSttr = arr.join(', ');
             saveContent(randArrSttr);
           });

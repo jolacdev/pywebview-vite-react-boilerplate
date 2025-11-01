@@ -4,21 +4,20 @@ from time import time
 import webview
 
 from api import Api
-from entrypoint import get_frontend_entrypoint
+from webview_helpers import get_frontend_entrypoint, wait_for_js
 
 
-def set_interval(interval):
+def interval(interval):
     def decorator(function):
         def wrapper(*args, **kwargs):
             stopped = threading.Event()
 
-            def loop():  # executed in another thread
-                while not stopped.wait(interval):  # until stopped
+            def loop():
+                while not stopped.wait(interval):
                     function(*args, **kwargs)
 
-            t = threading.Thread(target=loop)
-            t.daemon = True  # stop if the program exits
-            t.start()
+            thread = threading.Thread(target=loop, daemon=True)
+            thread.start()
             return stopped
 
         return wrapper
@@ -26,13 +25,17 @@ def set_interval(interval):
     return decorator
 
 
-@set_interval(1)
+@interval(1)
 def update_ticker():
-    if len(webview.windows) > 0:
+    if not webview.windows:
+        return
+
+    if wait_for_js(webview.windows[0], "window.pywebview.state.setTicker"):
         webview.windows[0].evaluate_js(f'window.pywebview.state.setTicker("{int(time())}")')
 
 
 if __name__ == "__main__":
     frontend_entrypoint = get_frontend_entrypoint()
-    window = webview.create_window("pywebview-react boilerplate", frontend_entrypoint, js_api=Api())
+    # NOTE: https://pywebview.flowrl.com/api/#webview-create-window
+    window = webview.create_window(title="PyWebView App", url=frontend_entrypoint, js_api=Api())
     webview.start(update_ticker, debug=True)

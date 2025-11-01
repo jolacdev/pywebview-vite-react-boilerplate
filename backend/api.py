@@ -5,18 +5,14 @@ import webview
 class Api:
     """Python API functions exposed to JavaScript."""
 
-    # Data generation
-    def rand_arr(self):
-        return np.random.rand(4).tolist()
+    def generate_random_number_array(self, length: int = 4):
+        return np.random.rand(length).tolist()
 
-    # Window actions
     def toggle_fullscreen(self):
         webview.windows[0].toggle_fullscreen()
 
-    # File operations
     def save_content(self, content):
-        filename = webview.windows[0].create_file_dialog(webview.FileDialog.SAVE)
-        if not filename:
+        if not (filename := webview.windows[0].create_file_dialog(webview.FileDialog.SAVE)):
             return
         with open(filename, "w") as f:
             f.write(content)
