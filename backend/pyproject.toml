@@ -12,6 +12,7 @@ select = [
     "I",   # ISort
     "N",   # PEP8 Naming
     "PL",  # PyLint Convention
+    "ANN",  # Flake8 Annotations (Typing Enforcement)
 
     # Preview Rules
     "E262", # no-space-after-inline-comment
@@ -27,3 +28,7 @@ select = [
 ]
 preview = true
 explicit-preview-rules = true
+
+# NOTE: Pattern can be negated (!) to apply a rule everywhere except in the specified file(s).
+[tool.ruff.lint.per-file-ignores]
+"!api.py" = ["ANN"]

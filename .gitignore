@@ -17,6 +17,9 @@ venv
 __pycache__
 *.py[cod]
 
+# Ruff - Linter Cache
+.ruff_cache
+
 # JavaScript & Python Build Artifacts
 frontend_dist
 build
