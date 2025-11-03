@@ -244,4 +244,9 @@ export default [
       'perfectionist/sort-enums': [2, { type: 'natural' }],
     },
   },
+
+  // NOTE: Ignore auto-generated PyWebView API types
+  {
+    ignores: ['**/types/api.d.ts'],
+  },
 ];

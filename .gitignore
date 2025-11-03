@@ -24,3 +24,6 @@ dist
 
 # macOS - System Files
 .DS_Store
+
+# Temporary Directories
+temp/

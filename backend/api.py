@@ -1,8 +1,10 @@
 import numpy as np
 import webview
+from pyflow import extensity
 
 
-class Api:
+@extensity
+class PyWebViewApi:
     """Python API functions exposed to JavaScript."""
 
     def generate_random_number_array(self, length: int = 4):
