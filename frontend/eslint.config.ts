@@ -247,6 +247,6 @@ export default [
 
   // NOTE: Ignore auto-generated PyWebView API types
   {
-    ignores: ['**/types/api.d.ts'],
+    ignores: ['**/types/pywebview/pywebview-api.d.ts'],
   },
 ];

@@ -25,7 +25,7 @@
     "_gen-api:code:windows": ".\\.venv\\Scripts\\pyflow generate -m ./backend -o ./temp/pyflow",
     "_gen-api:code:default": "./.venv/bin/pyflow generate -m ./backend -o ./temp/pyflow",
     "_gen-api:types": "tsc ./temp/pyflow/api/index.ts --noCheck --declaration --emitDeclarationOnly --target ES2020 --outDir ./temp/pyflow/types",
-    "_gen-api:move": "shx mkdir -p ./frontend/src/types && shx mv ./temp/pyflow/types/api/index.d.ts ./frontend/src/types/api.d.ts",
+    "_gen-api:move": "node ./scripts/move-api-types.mjs",
     "_gen-api:clean": "rimraf ./temp"
   },
   "keywords": [
@@ -41,8 +41,6 @@
     "cross-env": "10.1.0",
     "rimraf": "6.0.1",
     "run-script-os": "1.1.6",
-    "typescript": "5.9.2",
-    "shelljs": "0.10.0",
-    "shx": "0.4.0"
+    "typescript": "5.9.2"
   }
 }
