@@ -143,6 +143,8 @@ export default [
       'no-undef': 2,
       // Enforces no braces when they can be omitted. Incorrect: const foo = (x) => { return x; } Correct: const foo = (x) => x;
       'arrow-body-style': [2, 'as-needed'],
+      // Warns when using console statements (console.log, console.debug...).
+      'no-console': 1,
 
       // [REACT RULES]
       // Enforces arrow functions for Components.
