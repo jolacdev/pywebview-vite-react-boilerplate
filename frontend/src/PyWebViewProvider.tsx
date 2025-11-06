@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 
+import Loader from './components/Loader/Loader';
 import { createPyWebViewMock } from './mocks/mockPyWebView';
 
 type PyWebViewProviderProps = {
@@ -50,9 +51,7 @@ const PyWebViewProvider = ({
   }, [isStandalone]);
 
   if (!isReady) {
-    return (
-      <div className="animate-spin inline-block size-10 border-3 border-current border-t-transparent text-green-700 rounded-full" />
-    );
+    return <Loader isFullscreen />;
   }
 
   return children;
