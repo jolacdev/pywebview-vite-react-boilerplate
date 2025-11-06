@@ -30,8 +30,11 @@ def update_ticker():
     if not webview.windows:
         return
 
-    if wait_for_js(webview.windows[0], "window.pywebview.state.setTicker"):
-        webview.windows[0].evaluate_js(f'window.pywebview.state.setTicker("{int(time())}")')
+    if not hasattr(current_window := webview.windows[0], "state"):
+        return
+
+    if wait_for_js(current_window, "window.pywebview.state.setTicker"):
+        current_window.evaluate_js(f'window.pywebview.state.setTicker("{int(time())}")')
 
 
 if __name__ == "__main__":
