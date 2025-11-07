@@ -6,6 +6,8 @@ import PyWebViewProvider from './PyWebViewProvider.tsx';
 import { PyWebViewApiType as PyWebViewApi } from './types/pywebview/pywebview-api';
 import { PyWebViewState } from './types/pywebview/pywebview-state.ts';
 
+import './i18n/i18n.ts';
+
 import './index.css';
 
 declare global {

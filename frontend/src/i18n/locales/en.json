@@ -1,0 +1,13 @@
+{
+  "app": {
+    "title": "PyWebView React",
+    "description": "Use Python to do tasks JavaScript can't, like disk access. Click to save this content to disk.",
+    "systemInfo": "Python Data 🐍: {{hostname}} is running in {{os}} v{{version}}.",
+    "bridgeInfo": "Python ↔ JavaScript bridge. Python value: <strong>{{value}}</strong>",
+    "actions": {
+      "generateRandom": "Generate random",
+      "save": "Save",
+      "toggleFullScreen": "Toggle full screen"
+    }
+  }
+}

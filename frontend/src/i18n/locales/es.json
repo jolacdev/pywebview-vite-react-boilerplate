@@ -1,0 +1,13 @@
+{
+  "app": {
+    "title": "PyWebView React",
+    "description": "Usa Python para realizar tareas que JavaScript no puede, como acceder al disco. Haz clic para guardar este contenido en el disco.",
+    "systemInfo": "Datos de Python 🐍: {{hostname}} se está ejecutando en {{os}} v{{version}}.",
+    "bridgeInfo": "Puente Python ↔ JavaScript. Valor de Python: <strong>{{value}}</strong>",
+    "actions": {
+      "generateRandom": "Generar aleatorio",
+      "save": "Guardar",
+      "toggleFullScreen": "Alternar pantalla completa"
+    }
+  }
+}
