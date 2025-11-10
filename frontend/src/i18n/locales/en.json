@@ -6,8 +6,7 @@
     "bridgeInfo": "Python ↔ JavaScript bridge. Python value: <strong>{{value}}</strong>",
     "actions": {
       "generateRandom": "Generate random",
-      "save": "Save",
-      "toggleFullScreen": "Toggle full screen"
+      "save": "Save"
     }
   }
 }

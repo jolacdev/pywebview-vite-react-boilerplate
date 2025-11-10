@@ -78,12 +78,6 @@ const App = () => {
           >
             {t('actions.save')}
           </button>
-          <button
-            className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 active:not-disabled:scale-95 transition-all duration-50"
-            onClick={() => window.pywebview.api.toggle_fullscreen()}
-          >
-            {t('actions.toggleFullScreen')}
-          </button>
         </div>
       </div>
     </div>

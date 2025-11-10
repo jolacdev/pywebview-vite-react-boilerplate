@@ -19,7 +19,6 @@ const mockApi: PyWebViewApi = {
     return Promise.resolve(systemInfo);
   },
   save_content: (): Promise<void> => Promise.resolve(),
-  toggle_fullscreen: (): Promise<void> => Promise.resolve(),
 };
 
 export const createPyWebViewMock = () => {

@@ -10,7 +10,6 @@ export declare class PyWebViewApi {
     generate_random_number_array(length?: number): Promise<number[]>;
     get_system_info(): Promise<SystemInfo>;
     save_content(content: string): Promise<any>;
-    toggle_fullscreen(): Promise<any>;
     static createInstance(args?: Partial<PyWebViewApi>): Promise<PyWebViewApi>;
 }
 export type PyWebViewApiType = PyWebViewApi;

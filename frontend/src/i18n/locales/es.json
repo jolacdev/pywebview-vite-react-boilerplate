@@ -6,8 +6,7 @@
     "bridgeInfo": "Puente Python ↔ JavaScript. Valor de Python: <strong>{{value}}</strong>",
     "actions": {
       "generateRandom": "Generar aleatorio",
-      "save": "Guardar",
-      "toggleFullScreen": "Alternar pantalla completa"
+      "save": "Guardar"
     }
   }
 }
