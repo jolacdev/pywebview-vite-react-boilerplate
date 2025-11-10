@@ -3,10 +3,10 @@
 
 block_cipher = None
 added_files = [
-    ('.\\frontend_dist', 'frontend_dist'),
+    ('..\\..\\frontend_dist', 'frontend_dist'),
 ]
 
-a = Analysis(['.\\backend\\main.py'],
+a = Analysis(['..\\..\\backend\\main.py'],
              pathex=['.\\dist'],
              binaries=[],
              datas=added_files,
@@ -34,7 +34,7 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           upx_exclude=[],
-          icon='.\\backend\\assets\\logo.ico',
+          icon='.\\logo.ico',
           runtime_tmpdir=None,
           console=False,
           disable_windowed_traceback=False,

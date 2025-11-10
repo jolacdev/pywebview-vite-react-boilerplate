@@ -16,13 +16,13 @@ if os.path.exists("build"):
 if os.path.exists("dist/index.app"):
     shutil.rmtree("dist/index.app")
 
-ENTRY_POINT = ["backend/main.py"]
+ENTRY_POINT = ["../../backend/main.py"]
 
-DATA_FILES = tree("frontend_dist")
+DATA_FILES = tree("../../frontend_dist")
 OPTIONS = {
     "argv_emulation": False,
     "strip": False,
-    "iconfile": "backend/assets/logo.icns",
+    "iconfile": "./logo.icns",
     "packages": ["WebKit", "Foundation", "webview"],
     "plist": {"NSRequiresAquaSystemAppearance": False},
     "resources": DATA_FILES,
