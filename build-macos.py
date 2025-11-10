@@ -16,7 +16,7 @@ if os.path.exists("build"):
 if os.path.exists("dist/index.app"):
     shutil.rmtree("dist/index.app")
 
-ENTRY_POINT = ["backend/index.py"]
+ENTRY_POINT = ["backend/main.py"]
 
 DATA_FILES = tree("frontend_dist")
 OPTIONS = {

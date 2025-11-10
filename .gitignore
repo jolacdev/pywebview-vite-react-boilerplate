@@ -20,6 +20,9 @@ __pycache__
 # Ruff - Linter Cache
 .ruff_cache
 
+# MyPy - Type Checker Cache
+.mypy_cache
+
 # JavaScript & Python Build Artifacts
 frontend_dist
 build

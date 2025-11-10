@@ -6,7 +6,7 @@ added_files = [
     ('.\\frontend_dist', 'frontend_dist'),
 ]
 
-a = Analysis(['.\\backend\\index.py'],
+a = Analysis(['.\\backend\\main.py'],
              pathex=['.\\dist'],
              binaries=[],
              datas=added_files,
