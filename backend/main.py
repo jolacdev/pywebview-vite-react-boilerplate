@@ -1,10 +1,11 @@
+import os
 import threading
 from time import time
 
 import webview
 
-from api import PyWebViewApi
-from webview_helpers import get_frontend_entrypoint, wait_for_js
+from api.api import PyWebViewApi
+from helpers.webview_helpers import get_frontend_entrypoint, wait_for_js
 
 
 def interval(interval):
@@ -38,7 +39,7 @@ def update_ticker():
 
 
 if __name__ == "__main__":
-    frontend_entrypoint = get_frontend_entrypoint()
+    frontend_entrypoint = get_frontend_entrypoint(os.path.dirname(__file__))
     # NOTE: https://pywebview.flowrl.com/api/#webview-create-window
     window = webview.create_window(
         title="PyWebView App", url=frontend_entrypoint, js_api=PyWebViewApi()

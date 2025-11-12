@@ -2,18 +2,17 @@ import os
 from time import sleep, time
 
 
-def get_frontend_entrypoint():
+def get_frontend_entrypoint(backend_dir_path: str):
     """Return the frontend entrypoint depending on context."""
 
     live_server = os.getenv("LIVE_SERVER", "0") == "1"
     if live_server:
         return "http://localhost:3000"
 
-    backend_dir_path = os.path.dirname(__file__)
     paths = (
-        "../frontend_dist/index.html",  # Unfrozen (development)
-        "../Resources/frontend_dist/index.html",  # Frozen macOS (py2app)
-        "./frontend_dist/index.html",  # Frozen Windows (pyinstaller)
+        "../frontend_dist/index.html",  # Development build (not frozen): Compiled but not bundled.
+        "../Resources/frontend_dist/index.html",  # macOS executable (frozen): Bundled via py2app.
+        "./frontend_dist/index.html",  # Windows executable (frozen): Bundled via PyInstaller (e.g., ..\AppData\Local\Temp\_MEIXXXXX\frontend_dist\index.html).
     )
 
     for rel_path in paths:

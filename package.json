@@ -24,7 +24,7 @@
     "_gen-api:code": "cross-env PYTHONUTF8=1 run-script-os",
     "_gen-api:code:windows": ".\\.venv\\Scripts\\pyflow generate -m ./backend -o ./temp/pyflow",
     "_gen-api:code:default": "./.venv/bin/pyflow generate -m ./backend -o ./temp/pyflow",
-    "_gen-api:types": "tsc ./temp/pyflow/api/index.ts --noCheck --declaration --emitDeclarationOnly --target ES2020 --outDir ./temp/pyflow/types",
+    "_gen-api:types": "tsc ./temp/pyflow/api/api/index.ts --noCheck --declaration --emitDeclarationOnly --target ES2020 --outDir ./temp/pyflow/types",
     "_gen-api:move": "node ./scripts/move-api-types.mjs",
     "_gen-api:clean": "rimraf ./temp"
   },
