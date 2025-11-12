@@ -1,4 +1,4 @@
-# PyWebView + React Vite
+# PyWebView + Vite React
 
 A lightweight boilerplate for building **desktop applications** with **Python** and **React (Vite)**.
 
@@ -8,7 +8,7 @@ Based on the original [PyWebView React boilerplate](https://github.com/r0x0r/pyw
 
 - 🪟 **PyWebView** – Native desktop window with a Python ↔ JavaScript bridge.
 - 🐍 **Python** – Backend language for application logic.
-- ⚡ **React + Vite** – Frontend framework and build tooling.
+- ⚡ **Vite + React** – Frontend framework and build tooling.
 - 📦 **PyInstaller / Py2App** – Create binaries for Windows, Linux, and macOS.
 
 ---

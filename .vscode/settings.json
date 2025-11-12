@@ -1,0 +1,6 @@
+{
+  // Syntax highlighting for PyInstaller .spec files
+  "files.associations": {
+    "pywebview-react.spec": "python"
+  }
+}
