@@ -1,11 +1,20 @@
 {
   "app": {
     "title": "PyWebView React",
-    "description": "Usa Python para realizar tareas que JavaScript no puede, como acceder al disco. Haz clic para guardar este contenido en el disco.",
-    "systemInfo": "Datos de Python 🐍: {{hostname}} se está ejecutando en {{os}} v{{version}}.",
-    "bridgeInfo": "Puente Python ↔ JavaScript. Valor de Python: <strong>{{value}}</strong>",
-    "actions": {
-      "generateRandom": "Generar aleatorio",
+    "description": "Explora estos ejemplos que utilizan el puente de comunicación Python ↔ JavaScript de PyWebView.",
+    "currentDate": {
+      "title": "Fecha Actual"
+    },
+    "systemInfo": {
+      "title": "Información del Sistema",
+      "hostname": "<strong>Nombre del dispositivo:</strong> {{hostname}}",
+      "os": "<strong>Sistema operativo:</strong> {{os}}",
+      "version": "<strong>Versión:</strong> {{version}}",
+      "ram": "<strong>RAM:</strong> {{ram}}GB"
+    },
+    "randomNumber": {
+      "title": "Número Aleatorio",
+      "placeholder": "Genera números aleatorios usando Python.",
       "save": "Guardar"
     }
   }

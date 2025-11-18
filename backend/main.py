@@ -34,14 +34,17 @@ def update_ticker():
     if not hasattr(current_window := webview.windows[0], "state"):
         return
 
-    if wait_for_js(current_window, "window.pywebview.state.setTicker"):
-        current_window.evaluate_js(f'window.pywebview.state.setTicker("{int(time())}")')
+    # Run JS code from Python.
+    # current_window.evaluate_js("console.log('Logged from Python!')")
+
+    # Update shared state object, which automatically fires change event.
+    current_window.state.timestamp = int(time() * 1000)
 
 
 if __name__ == "__main__":
     frontend_entrypoint = get_frontend_entrypoint(os.path.dirname(__file__))
     # NOTE: https://pywebview.flowrl.com/api/#webview-create-window
     window = webview.create_window(
-        title="PyWebView App", url=frontend_entrypoint, js_api=PyWebViewApi()
+        title="PyWebView App", url=frontend_entrypoint, js_api=PyWebViewApi(), width=950, height=700
     )
     webview.start(update_ticker, debug=True)
