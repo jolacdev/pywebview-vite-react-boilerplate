@@ -21,9 +21,17 @@ class PyWebViewApi:
         return np.random.rand(length).tolist()
 
     def save_content(self, content: str) -> None:
-        if not (filenames := webview.windows[0].create_file_dialog(webview.FileDialog.SAVE)):
+        if not (
+            result := webview.windows[0].create_file_dialog(
+                webview.FileDialog.SAVE,
+                save_filename="example.txt",
+            )
+        ):
             return
-        with open(filenames[0], "w") as f:
+
+        filename = str(result) if not isinstance(result, (tuple, list)) else str(result[0])
+
+        with open(filename, "w") as f:
             f.write(content)
 
     def get_system_info(self) -> SystemInfo:
