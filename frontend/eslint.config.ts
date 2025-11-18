@@ -168,11 +168,12 @@ export default [
         },
       ],
 
-      // Allows spreading in JSX components (<MyCustomComponent {...props} />) and forbid on everything else (HTML tags, etc.)
+      // Allows spreading in JSX components (<MyCustomComponent {...props} />) and SVGs, and forbid on everything else (HTML tags, etc.)
       'react/jsx-props-no-spreading': [
         2,
         {
           custom: 'ignore',
+          exceptions: ['svg'],
         },
       ],
 
