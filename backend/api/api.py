@@ -2,6 +2,7 @@ import platform
 from typing import TypedDict
 
 import numpy as np
+import psutil  # type: ignore
 import webview
 from pyflow import extensity  # type: ignore
 
@@ -11,6 +12,7 @@ class SystemInfo(TypedDict):
     os: str
     version: str
     hostname: str
+    ram: int
 
 
 @extensity
@@ -35,8 +37,11 @@ class PyWebViewApi:
             f.write(content)
 
     def get_system_info(self) -> SystemInfo:
+        total_ram_gb = round(psutil.virtual_memory().total / (1024**3))
+
         return SystemInfo(
             os=platform.system(),
             version=platform.version(),
             hostname=platform.node(),
+            ram=total_ram_gb,
         )

@@ -14,6 +14,7 @@ const mockApi: PyWebViewApi = {
     const systemInfo: SystemInfo = {
       hostname: 'standalone',
       os: 'Windows',
+      ram: 16,
       version: '11',
     };
     return Promise.resolve(systemInfo);

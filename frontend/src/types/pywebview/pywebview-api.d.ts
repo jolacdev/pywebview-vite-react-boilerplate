@@ -18,6 +18,7 @@ export declare class SystemInfo {
     os: string;
     version: string;
     hostname: string;
+    ram: number;
     constructor(args?: Partial<SystemInfo>);
     static createInstance(args?: Partial<SystemInfo>): Promise<SystemInfo>;
 }
