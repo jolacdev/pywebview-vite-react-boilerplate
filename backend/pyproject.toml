@@ -12,7 +12,7 @@ select = [
     "I",   # ISort
     "N",   # PEP8 Naming
     "PL",  # PyLint Convention
-    "ANN",  # Flake8 Annotations (Typing Enforcement)
+    "ANN", # Flake8 Annotations (Typing Enforcement)
 
     # Preview Rules
     "E262", # no-space-after-inline-comment

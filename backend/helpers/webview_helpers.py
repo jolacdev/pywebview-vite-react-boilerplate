@@ -23,7 +23,7 @@ def get_frontend_entrypoint(backend_dir_path: str):
     raise Exception("No index.html found")
 
 
-def wait_for_js(window, func_path: str, timeout: float = 5) -> bool:
+def _wait_for_js(window, func_path: str, timeout: float = 5) -> bool:
     """
     Wait until a specific JS function (e.g., window.pywebview.state.setValue) exists.
     Returns True if found within the timeout (seconds), otherwise False.

@@ -5,7 +5,7 @@ from time import time
 import webview
 
 from api.api import PyWebViewApi
-from helpers.webview_helpers import get_frontend_entrypoint, wait_for_js
+from helpers.webview_helpers import get_frontend_entrypoint
 
 
 def interval(interval):
