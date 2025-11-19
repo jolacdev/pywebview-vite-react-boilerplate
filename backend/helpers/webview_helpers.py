@@ -1,5 +1,11 @@
 import os
+import sys
 from time import sleep, time
+
+
+def is_running_bundled() -> bool:
+    """Return True if running inside a PyInstaller bundle, False otherwise."""
+    return getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS")
 
 
 def get_frontend_entrypoint(backend_dir_path: str):

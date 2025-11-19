@@ -5,7 +5,7 @@ from time import time
 import webview
 
 from api.api import PyWebViewApi
-from helpers.webview_helpers import get_frontend_entrypoint
+from helpers.webview_helpers import get_frontend_entrypoint, is_running_bundled
 
 
 def interval(interval):
@@ -47,4 +47,6 @@ if __name__ == "__main__":
     window = webview.create_window(
         title="PyWebView App", url=frontend_entrypoint, js_api=PyWebViewApi(), width=950, height=700
     )
-    webview.start(update_ticker, debug=True)
+
+    is_devtools_enabled = not is_running_bundled()
+    webview.start(update_ticker, debug=is_devtools_enabled)
