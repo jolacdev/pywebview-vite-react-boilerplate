@@ -12,7 +12,7 @@ The template also provides:
 
 This template has been **set up and tested on Windows and macOS**. Linux and Android may require additional configuration for PyInstaller, system libraries, and Python dependencies.
 
-> Based on the original [PyWebView React boilerplate](https://github.com/r0x0r/pywebview-react-boilerplate).
+> Based on the original [PyWebView React boilerplate](https://github.com/r0x0r/pywebview-react-boilerplate) and the [ShijiMi-Soup's Vite addition](https://github.com/ShijiMi-Soup/pywebview-vite-react-tutorial).
 
 ---
 

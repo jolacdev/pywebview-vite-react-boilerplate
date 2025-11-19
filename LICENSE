@@ -31,11 +31,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Third-Party Code
 
-This project contains portions of code from the Roman's original template. These portions are under the following license:
+This project contains portions of code from the following third-party sources:
 
-BSD 3-Clause License
+- Roman's original PyWebView React template.
+- Takahiro Yoshikawa's template with Vite addition.
 
-Copyright (c) 2020, Roman
+These projects are also licensed under the BSD 3-Clause License:
+
+Copyright (c) 2020, Roman  
+Copyright (c) 2024, Takahiro Yoshikawa  
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
