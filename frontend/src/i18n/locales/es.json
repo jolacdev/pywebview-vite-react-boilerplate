@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "PyWebView React",
+    "description": "Explora estos ejemplos que utilizan el puente de comunicación Python ↔ JavaScript de PyWebView.",
+    "currentDate": {
+      "title": "Fecha Actual"
+    },
+    "systemInfo": {
+      "title": "Información del Sistema",
+      "hostname": "<strong>Nombre del dispositivo:</strong> {{hostname}}",
+      "os": "<strong>Sistema operativo:</strong> {{os}}",
+      "version": "<strong>Versión:</strong> {{version}}",
+      "ram": "<strong>RAM:</strong> {{ram}}GB"
+    },
+    "randomNumber": {
+      "title": "Número Aleatorio",
+      "placeholder": "Genera números aleatorios usando Python.",
+      "save": "Guardar"
+    }
+  }
+}

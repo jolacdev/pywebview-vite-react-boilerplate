@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "PyWebView React",
+    "description": "Explore these examples using the Python ↔ JavaScript communication bridge of PyWebView.",
+    "currentDate": {
+      "title": "Current Date"
+    },
+    "systemInfo": {
+      "title": "System Information",
+      "hostname": "<strong>Device name:</strong> {{hostname}}",
+      "os": "<strong>OS:</strong> {{os}}",
+      "version": "<strong>Version:</strong> {{version}}",
+      "ram": "<strong>RAM:</strong> {{ram}}GB"
+    },
+    "randomNumber": {
+      "title": "Random Number",
+      "placeholder": "Generate random numbers using Python.",
+      "save": "Save"
+    }
+  }
+}
